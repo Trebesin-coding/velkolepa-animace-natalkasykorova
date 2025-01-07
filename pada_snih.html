@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sněžíííí</title>
+    <style>
+        body {
+            background-color: #abebf2;
+        }
+
+        .vlocka {
+            height: 50px;
+            position: absolute;
+             animation: pada 2s ease-in infinite;
+        }
+
+        @keyframes pada {
+            0% {
+                translate: 0px -50px ;
+            }
+
+            100% {
+                translate: 0px 1000px;
+            }
+        }
+
+        .tlacitko {
+            position: absolute;
+        }
+
+        .zem {
+            height: 250px;
+            width: 1500px;
+            background-color: white;
+            position: absolute;
+            bottom: -5px;
+            left: -5px;
+        }
+        
+        .velka {
+            aspect-ratio: 1/1;
+            height: 200px;
+            background-color: white;
+            border-radius: 50%;
+            border: 2px black solid;
+            position: absolute;
+            bottom: 100px;
+            left: 200px;
+        }
+
+        .stredni {
+            aspect-ratio: 1/1;
+            height: 150px;
+            background-color: white;
+            border-radius: 50%;
+            border: 2px black solid;
+            position: absolute;
+            bottom: 250px;
+            left: 225px;
+        }
+
+        .mala {
+            aspect-ratio: 1/1;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            border: 2px black solid;
+            position: absolute;
+            bottom: 370px;
+            left: 250px;
+        }
+
+        .ocko1 {
+            aspect-ratio: 1/1;
+            height: 5px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            border: 2px black solid;
+            position: absolute;
+            bottom: 420px;
+            left: 270px;
+        }
+
+        .ocko2 {
+            aspect-ratio: 1/1;
+            height: 5px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            border: 2px black solid;
+            position: absolute;
+            bottom: 420px;
+            left: 325px;
+        }
+
+        .nos {
+            width: 0;
+	        height: 0;
+	        border-top: 20px solid transparent;
+	        border-right: 40px solid #e19e17;
+	        border-bottom: 20,5px solid transparent;
+            position: absolute;
+            left: 250px;
+            bottom: 390px;
+        }
+
+        .hrnec {
+            aspect-ratio: 1/1;
+            border-radius: 10%;
+            height: 50px;
+            background-color: rgb(180, 45, 45);
+            position: absolute;
+            bottom: 460px;
+            left: 275px;
+        }
+
+        .knoflik1 {
+            aspect-ratio: 1/1;
+            height: 5px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            border: 2px black solid;
+            position: absolute;
+            bottom: 350px;
+            left: 295px;
+        }
+
+        .knoflik2 {
+            aspect-ratio: 1/1;
+            height: 5px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            border: 2px black solid;
+            position: absolute;
+            bottom: 300px;
+            left: 295px;
+        }
+
+        .knoflik3 {
+            aspect-ratio: 1/1;
+            height: 5px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            border: 2px black solid;
+            position: absolute;
+            bottom: 200px;
+            left: 295px;
+        }
+
+        .snehulak {
+            position: absolute;
+            height: 500px;
+            bottom: 100px;
+            animation: tanec 0.5s infinite;
+        }
+
+        @keyframes tanec {
+            0%{
+                transform: scaleX(-1);
+            translate: 600px;            
+
+            }   
+            100%{
+                transform: scaleX(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="tlacitko">ZMÁČKNI MĚ</button>
+    <div class="zem"></div>
+    <div class="snehulak">
+        <div class="velka"></div>
+        <div class="stredni"></div>
+        <div class="mala"></div>
+        <div class="oci">
+            <div class="ocko1"></div>
+            <div class="ocko2"></div>
+       </div>
+        <div class="nos"></div>
+        <div class="pusa">
+            <div class="pusa1"></div>
+            <div class="pusa2"></div>
+            <div class="pusa3"></div>
+            <div class="pusa4"></div>
+        </div>
+        <div class="hrnec"></div>
+        <div class="pravaruka"></div>
+        <div class="levaruka"></div>
+        <div class="knofliky">
+            <div class="knoflik1"></div>
+            <div class="knoflik2"></div>
+            <div class="knoflik3"></div>
+        </div>
+    </div>
+    <div class="vlocky"></div>
+
+
+    <script>
+        let button = document.querySelector('.tlacitko')
+        let vlocky = document.querySelector('.vlocky')
+
+        button.addEventListener('click', function(){
+        for (let i = 0; i < 2 ; i++ ){
+        let vlocka = document.createElement('img')
+        vlocka.src="https://static.vecteezy.com/system/resources/previews/021/939/003/original/white-snowflake-isolated-on-a-transparent-background-png.png"
+        vlocka.classList.add('vlocka')
+
+        let randnum = Math.floor(Math.random()*2000)
+        vlocka.style.left = `${randnum}px`
+
+        vlocky.append(vlocka)
+        }
+        })
+    </script>
+       
+</body>
+</html>
